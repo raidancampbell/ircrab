@@ -1,5 +1,5 @@
 [package]
-name = "untitled-rust-bot"
+name = "ircrab"
 version = "0.1.0"
 edition = "2021"
 
