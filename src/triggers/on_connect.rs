@@ -14,6 +14,8 @@ pub static ON_CONNECT: SyncTrigger = SyncTrigger {
             thread::sleep(time::Duration::from_millis(1000));
             let resp = irc::Message {
                 command: Command::JOIN,
+                // TODO(raidancampbell): find a way to access the configuration
+                //  from here instead of hardcoding
                 params: vec!["#cwru".to_string()],
             };
             tx.send(resp).unwrap_or_else(|err| {

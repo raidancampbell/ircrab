@@ -12,6 +12,7 @@ pub fn parse_message(s: &str) -> Result<Message, ParseErr> {
     let mut j: i32;
 
     // there's this whole prefix business, but I dunno what it does, so let's eat it.
+    // TODO(raidancampbell): actually parse it
     if trimmed.starts_with(':') {
         i = (trimmed.find(' ').unwrap() + 1) as i32;
     }

@@ -73,7 +73,7 @@ impl Bot {
                 }
                 Err(e) => {
                     println!(
-                        "failed to parse incoming message: {} with error {}",
+                        "failed to parse incoming message: {} with error {}. continuing...",
                         &line, e
                     );
                     continue;
@@ -88,6 +88,7 @@ impl Bot {
                 Ok(msg) => {
                     // format into 'COMMAND ARG1 ARG2', truncate to 510, and append '/r/n'
                     let mut output = msg.command.as_str().to_string();
+                    // TODO(raidancampbell): there's gotta be an easier/cheaper way to build the byte output
                     output.push(' ');
                     output.push_str(msg.params.join(" ").as_str());
 
